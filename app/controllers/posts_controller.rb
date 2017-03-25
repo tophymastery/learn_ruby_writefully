@@ -7,6 +7,10 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def show
+    @post = Post.where(id: params[:id]).first
+  end
+
   def create
     @post = Post.new(post_params)
     if @post.save
