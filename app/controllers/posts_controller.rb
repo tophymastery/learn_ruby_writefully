@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.order("updated_at DESC")
   end
 
   def new
@@ -13,6 +13,19 @@ class PostsController < ApplicationController
       redirect_to posts_path
     else
       # render form again
+    end
+  end
+
+  def edit
+    @post = Post.where(id: params[:id]).first
+  end
+
+  def update
+    @post = Post.where(id: params[:id]).first
+    if @post.update_attributes(post_params)
+      redirect_to posts_path
+    else
+      # render edit form again
     end
   end
 
