@@ -1,4 +1,14 @@
 <%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div class="alert alert-danger">
+      <h3><%= pluralize(@user.errors.count, 'error') %> stopped this form from saving.</h3>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div class="form-group">
     <%= f.label :email %>
     <%= f.text_field :email, class: 'form-control' %>
