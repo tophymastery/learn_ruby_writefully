@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :users
+  resources :users, only: [:create]
 
-  resource :session
+  resource :session, only: [:create]
+
+  get 'login' => 'sessions#new'
+  delete 'logout' => 'sessions#destroy'
+  get 'register' => 'users#new'
 
   resources :posts do
     resources :comments
