@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resource :session, only: [:create]
 
+  resource :confirmation
+
   get 'login' => 'sessions#new'
   delete 'logout' => 'sessions#destroy'
   get 'register' => 'users#new'
