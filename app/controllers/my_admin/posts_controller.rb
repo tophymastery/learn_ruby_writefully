@@ -1,7 +1,7 @@
 class MyAdmin::PostsController < MyAdmin::BaseController
 
   def index
-    @posts = Post.order("created_at DESC").page(params[:page]).per(10)
+    @posts = Post.order("created_at DESC").page(params[:page]).per(2)
   end
 
   def new
