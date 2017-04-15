@@ -1,5 +1,5 @@
 class MyAdmin::BaseController < ApplicationController
-  before_filter :ensure_admin_user!
+  before_action :ensure_admin_user!
 
   def ensure_admin_user!
     unless current_user and current_user.admin?
