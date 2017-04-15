@@ -8,8 +8,10 @@ Rails.application.routes.draw do
     resource :confirmation, only: [:new]
   end
 
-  namespace :admin do
+  namespace :my_admin do
     resources :posts
+
+    root to: 'posts#index'
   end
 
   get 'login' => 'auth/sessions#new'
