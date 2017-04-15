@@ -24,7 +24,7 @@ class MyAdmin::PostsController < MyAdmin::BaseController
   def update
     @post = Post.where(id: params[:id]).first
     if @post.update_attributes(post_params)
-      redirect_to posts_path
+      redirect_to my_admin_posts_path
     else
       # render edit form again
     end
@@ -33,7 +33,7 @@ class MyAdmin::PostsController < MyAdmin::BaseController
   def destroy
     @post = Post.where(id: params[:id]).first
     if @post.destroy
-      redirect_to posts_path
+      redirect_to my_admin_posts_path
     else
       # 
     end
@@ -42,6 +42,6 @@ class MyAdmin::PostsController < MyAdmin::BaseController
 private
 
   def post_params
-    params.require(:post).permit(:title, :body, :tag_ids => [])
+    params.require(:post).permit(:state_event, :title, :body, :tag_ids => [])
   end
 end
