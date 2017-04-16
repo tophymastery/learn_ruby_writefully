@@ -13,7 +13,15 @@ This repository is created to learn ruby on rails from [codemy.net](https://www.
 
 3. create database and schema with command ```rake db:create``` and ```rake db:migrate```
 4. start server with command ```rails server```
+5. Install and start mail server 
+* Tested for mac
+  * Install mailwatcher ```sudo gem install mailcatcher```
+  * Start mail server ```mailcatcher```
 
 ## Useful command
 * Start ruby console ```rails console```
 * Show routes ```rake routes```
+* Unit test [reference](https://github.com/qrush/m)
+  * Run unit test ```rake```
+  * Run unit test with specific class ```m test/models/user_test.rb```
+  * Run unit test with specific unit ```m test/models/user_test.rb:12```
