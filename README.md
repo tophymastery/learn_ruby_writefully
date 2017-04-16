@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repository is created to learn ruby on rails from [codemy.net](https://www.codemy.net/channels/rails-foundation)
 
-Things you may want to cover:
+## How to run project
 
-* Ruby version
+1. go to root of project and run command ```bundle```
+2. start posgress SQL
+* For mac - install and start postgres following steps
+  * Install postgres ```brew install postgresql```
+  * Install postgres config (rails need this pg_config to read postgres configuration) ```sudo gem install pg -v '0.20.0'```
+  * Start postgres ```pg_ctl -D /usr/local/var/postgres start```
 
-* System dependencies
+3. create database and schema with command ```rake db:create``` and ```rake db:migrate```
+4. start server with command ```rails server```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Useful command
+* Start ruby console ```rails console```
+* Show routes ```rake routes```
